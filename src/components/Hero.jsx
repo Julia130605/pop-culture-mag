@@ -2,13 +2,13 @@ import heroImage from "../assets/hero.jpg";
 function Hero() {
   return (
     <section className="relative min-h-[calc(100vh-90px)] overflow-hidden bg-black">
-      <img
-       src={heroImage}
-        alt="Pop music live performance"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
+    <img
+  src={heroImage}
+  alt="Pop music live performance"
+  className="absolute inset-0 h-full w-full object-cover object-right md:object-center"
+/>
 
-      <div className="absolute inset-0 bg-black/55" />
+<div className="absolute inset-0 bg-black/55" />
 
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-90px)] max-w-7xl items-end px-6 pb-16 md:px-10 md:pb-24">
         <div className="max-w-4xl">
