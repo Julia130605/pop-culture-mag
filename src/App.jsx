@@ -1,3 +1,4 @@
+import Footer from './components/Footer'
 import VideoMoments from './components/VideoMoments'
 import ArtistSpotlight from './components/ArtistSpotlight'
 import Navbar from './components/Navbar'
@@ -23,9 +24,19 @@ function App() {
         <VideoMoments />
 
       </main>
+      <main>
+        <Hero />
+        <LatestNews />
+        <ArtistSpotlight />
+        <MusicPicks />
+        <VideoMoments />
+      </main>
 
+      <Footer />
     </div>
   )
 }
+
+
 
 export default App
