@@ -24,13 +24,7 @@ function App() {
         <VideoMoments />
 
       </main>
-      <main>
-        <Hero />
-        <LatestNews />
-        <ArtistSpotlight />
-        <MusicPicks />
-        <VideoMoments />
-      </main>
+    
 
       <Footer />
     </div>
