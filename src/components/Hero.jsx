@@ -5,7 +5,7 @@ function Hero() {
     <img
   src={heroImage}
   alt="Pop music live performance"
-  className="absolute inset-0 h-full w-full object-cover object-right md:object-center"
+  className="absolute inset-0 h-full w-full object-cover object-[55%_center] md:object-center"
 />
 
 <div className="absolute inset-0 bg-black/55" />
