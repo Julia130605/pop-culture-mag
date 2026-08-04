@@ -1,8 +1,9 @@
+import heroImage from "../assets/hero.jpg";
 function Hero() {
   return (
     <section className="relative min-h-[calc(100vh-90px)] overflow-hidden bg-black">
       <img
-        src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=2000&q=85"
+       src={heroImage}
         alt="Pop music live performance"
         className="absolute inset-0 h-full w-full object-cover"
       />
