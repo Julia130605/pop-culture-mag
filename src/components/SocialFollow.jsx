@@ -10,17 +10,34 @@ function SocialFollow() {
 
 
         <h2 className="text-3xl md:text-5xl font-serif mb-6">
-          Follow Julia on Redbook
+          Follow Julia on Xiaohongshu
         </h2>
 
 
-        <p className="text-gray-400 tracking-wide mb-8">
+        <a
+          href="https://www.xiaohongshu.com/user/profile/5ba37e67b70da5000108eafb"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            text-gray-400
+            tracking-wide
+            mb-8
+            inline-block
+            hover:text-white
+            transition
+          "
+        >
           @Juliatok
-        </p>
+        </a>
+
+
+        <br />
 
 
         <a
-          href="#"
+          href="https://www.xiaohongshu.com/user/profile/5ba37e67b70da5000108eafb"
+          target="_blank"
+          rel="noopener noreferrer"
           className="
             inline-block
             border
