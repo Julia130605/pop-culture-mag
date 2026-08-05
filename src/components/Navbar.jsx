@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 function Navbar() {
 
   const [open, setOpen] = useState(false);
@@ -17,237 +18,230 @@ function Navbar() {
           behavior: "smooth",
         });
 
-    }, 100);
+    },100);
 
   };
 
 
+  const menuItems = [
+    {
+      name:"HOME",
+      id:"home",
+    },
+    {
+      name:"LATEST",
+      id:"latest",
+    },
+    {
+      name:"ARTISTS",
+      id:"artists",
+    },
+    {
+      name:"MUSIC",
+      id:"music",
+    },
+    {
+      name:"VIDEOS",
+      id:"videos",
+    },
+  ];
+
+
+
   return (
 
-    <header className="border-b border-white/10 bg-black text-white">
+<header
+className="
+border-b
+border-white/15
+bg-black
+text-white
+"
+>
 
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
 
+<nav
+className="
+mx-auto
+flex
+max-w-7xl
+items-center
+justify-between
+px-8
+py-6
+"
+>
 
-        {/* Logo */}
 
-        <div>
+{/* LOGO */}
 
-          <a
-            href="#home"
-            className="
-            text-xl
-            font-bold
-            tracking-[0.18em]
-            "
-          >
+<div>
 
-            POP CULTURE MAG
+<a
+href="#"
+className="
+text-xl
+font-bold
+tracking-[0.18em]
+"
+>
+POP CULTURE MAG
+</a>
 
-          </a>
 
+<p
+className="
+mt-1
+font-serif
+text-[10px]
+italic
+text-gray-400
+"
+>
+Curated with love by Julia
+</p>
 
-          <p className="
-          mt-1
-          font-serif
-          text-[10px]
-          italic
-          text-gray-400
-          ">
 
-            Curated with love by Julia
+</div>
 
-          </p>
 
-        </div>
 
+{/* MENU BUTTON */}
 
+<button
 
-        {/* MENU BUTTON */}
+onClick={()=>setOpen(true)}
 
-        <button
+className="
+tracking-[0.3em]
+text-sm
+hover:opacity-70
+transition
+"
 
-          onClick={() => setOpen(true)}
+>
 
-          className="
-          text-sm
-          tracking-[0.3em]
-          "
+MENU
 
-        >
+</button>
 
-          MENU
 
-        </button>
 
+</nav>
 
-      </nav>
 
 
 
 
-      {/* FULL SCREEN MENU */}
+{/* FULL SCREEN MENU */}
 
-      {open && (
 
-        <div
+{
+open && (
 
-          className="
-          fixed
-          inset-0
-          z-[100]
-          bg-black
-          text-white
-          flex
-          flex-col
-          justify-center
-          px-12
-          animate-fade-in
-          "
+<div
 
-        >
+className="
+fixed
+inset-0
+z-[100]
+bg-black
+text-white
+flex
+flex-col
+justify-center
+px-12
+animate-menu
+"
 
+>
 
-          {/* CLOSE */}
 
-          <button
+{/* CLOSE */}
 
-            onClick={() => setOpen(false)}
+<button
 
-            className="
-            absolute
-            top-8
-            right-8
-            text-sm
-            tracking-[0.3em]
-            "
+onClick={()=>setOpen(false)}
 
-          >
+className="
+absolute
+top-8
+right-8
+tracking-[0.3em]
+text-sm
+"
 
-            CLOSE
+>
 
-          </button>
+CLOSE
 
+</button>
 
 
-          {/* MENU ITEMS */}
 
-          <button
 
-            onClick={() => handleNavigate("home")}
 
-            className="
-            block
-            text-5xl
-            font-serif
-            mb-8
-            transition-all
-            duration-500
-            hover:tracking-[0.15em]
-            "
+{/* ITEMS */}
 
-          >
 
-            HOME
+<div
+className="
+space-y-8
+"
+>
 
-          </button>
 
+{
+menuItems.map((item,index)=>(
 
 
-          <button
+<button
 
-            onClick={() => handleNavigate("latest")}
+key={item.id}
 
-            className="
-            block
-            text-5xl
-            font-serif
-            mb-8
-            transition-all
-            duration-500
-            hover:tracking-[0.15em]
-            "
+onClick={()=>handleNavigate(item.id)}
 
-          >
+style={{
+animationDelay:`${index*0.1}s`
+}}
 
-            LATEST
+className="
+block
+font-serif
+text-5xl
+tracking-wide
+opacity-0
+animate-item
+hover:opacity-60
+transition
+"
 
-          </button>
+>
 
+{item.name}
 
+</button>
 
-          <button
 
-            onClick={() => handleNavigate("artists")}
+))
 
-            className="
-            block
-            text-5xl
-            font-serif
-            mb-8
-            transition-all
-            duration-500
-            hover:tracking-[0.15em]
-            "
+}
 
-          >
 
-            ARTISTS
+</div>
 
-          </button>
 
 
+</div>
 
-          <button
 
-            onClick={() => handleNavigate("music")}
+)
 
-            className="
-            block
-            text-5xl
-            font-serif
-            mb-8
-            transition-all
-            duration-500
-            hover:tracking-[0.15em]
-            "
+}
 
-          >
 
-            MUSIC
+</header>
 
-          </button>
-
-
-
-          <button
-
-            onClick={() => handleNavigate("videos")}
-
-            className="
-            block
-            text-5xl
-            font-serif
-            transition-all
-            duration-500
-            hover:tracking-[0.15em]
-            "
-
-          >
-
-            VIDEOS
-
-          </button>
-
-
-
-        </div>
-
-      )}
-
-
-
-    </header>
 
   );
 
