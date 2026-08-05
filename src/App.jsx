@@ -3,6 +3,7 @@ import VideoMoments from './components/VideoMoments'
 import ArtistSpotlight from './components/ArtistSpotlight'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import SocialFollow from "./components/SocialFollow";
 import LatestNews from './components/LatestNews'
 import MusicPicks from './components/MusicPicks'
 function App() {
@@ -11,19 +12,19 @@ function App() {
 
       <Navbar />
 
-      <main>
+     <main>
 
-        <Hero />
+  <Hero />
 
-        <LatestNews />
+  <SocialFollow />
 
-        <ArtistSpotlight />
+  <LatestNews />
 
-        <MusicPicks />
+  <ArtistSpotlight />
 
-        <VideoMoments />
+  <MusicPicks />
 
-      </main>
+</main>
     
 
       <Footer />
