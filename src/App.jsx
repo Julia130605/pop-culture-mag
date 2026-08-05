@@ -1,3 +1,4 @@
+import EditorNote from './components/EditorNote'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import SocialFollow from './components/SocialFollow'
@@ -18,6 +19,8 @@ return (
 <main>
 
 <Hero />
+
+<EditorNote />
 
 <SocialFollow />
 

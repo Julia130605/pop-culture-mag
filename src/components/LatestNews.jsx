@@ -2,76 +2,150 @@ import news1 from "../assets/news1.jpg";
 import news2 from "../assets/news2.jpg";
 import news3 from "../assets/news3.jpg";
 
-const newsItems = [
-  {
-    title: "Ariana Grande Unveils petal, A Delicate Return to Her Most Personal Sound",
-    category: "ARTISTS",
-    date: "AUGUST 04, 2026",
-    image: news1
-  },
-  {
-    title: "Tate McRae Reveals the Visual World Behind Her New Pop Era",
-    category: "MUSIC",
-    date: "AUGUST 02, 2026",
-    image: news2
-  },
-  {
-    title: "Olivia Rodrigo Brings Her New Era to Life Under the Spotlight",
-    category: "LIVE",
-    date: "JULY 30, 2026",
-    image: news3
-  }
-];
 
 function LatestNews() {
-  return (
-    <section id="latest" className="bg-[#f2f0eb] px-6 py-20 text-black md:px-10 md:py-28">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-12 flex items-end justify-between border-b border-black/25 pb-5">
-          <div>
-            <p className="mb-2 text-xs tracking-[0.25em] text-black/50">
-              THE LATEST
-            </p>
 
-            <h2 className="text-4xl font-bold tracking-tight md:text-6xl">
-              Latest News
-            </h2>
-          </div>
+const newsItems = [
+{
+title:"Taylor Swift Enters A New Era",
+category:"LIVE",
+date:"JUL 2026",
+image:news1
+},
+{
+title:"Ariana Grande Returns To The Spotlight",
+category:"NEWS",
+date:"JUL 2026",
+image:news2
+},
+{
+title:"Olivia Rodrigo Defines A Generation",
+category:"ARTIST",
+date:"JUL 2026",
+image:news3
+}
+]
 
-          <a
-            href="#"
-            className="hidden text-xs tracking-[0.2em] transition-opacity hover:opacity-50 sm:block"
-          >
-            VIEW ALL
-          </a>
-        </div>
 
-        <div className="grid gap-10 md:grid-cols-3 md:gap-6">
-          {newsItems.map((news) => (
-            <article key={news.title} className="group cursor-pointer">
-              <div className="aspect-[4/5] overflow-hidden bg-neutral-300">
-                <img
-                  src={news.image}
-                  alt={news.title}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
+return (
 
-              <div className="mt-5 flex items-center gap-3 text-[10px] tracking-[0.18em] text-black/50">
-                <span>{news.category}</span>
-                <span>—</span>
-                <time>{news.date}</time>
-              </div>
+<section 
+id="latest"
+className="bg-[#f5f3ee] text-black py-24 px-6"
+>
 
-              <h3 className="mt-3 text-2xl font-semibold leading-tight transition-opacity duration-300 group-hover:opacity-55">
-                {news.title}
-              </h3>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+
+<div className="max-w-7xl mx-auto">
+
+
+<div className="mb-14">
+
+<p className="text-xs tracking-[0.4em] text-gray-500">
+LATEST STORIES
+</p>
+
+
+<h2 className="text-5xl md:text-7xl font-serif mt-4">
+What's happening now
+</h2>
+
+</div>
+
+
+
+<div className="grid md:grid-cols-3 gap-8">
+
+
+{/* 大新闻 */}
+
+<article className="md:col-span-2 group">
+
+<div className="overflow-hidden">
+
+<img
+src={newsItems[0].image}
+className="
+w-full
+h-[520px]
+object-cover
+group-hover:scale-105
+transition
+duration-700
+"
+/>
+
+</div>
+
+
+<p className="text-xs tracking-[0.3em] mt-6 text-gray-500">
+{newsItems[0].category}
+&nbsp; • &nbsp;
+{newsItems[0].date}
+</p>
+
+
+<h3 className="text-4xl font-serif mt-4">
+{newsItems[0].title}
+</h3>
+
+
+</article>
+
+
+
+
+
+{/* 两个小新闻 */}
+
+<div className="space-y-10">
+
+
+{
+newsItems.slice(1).map((news)=>(
+<article key={news.title}>
+
+
+<img
+src={news.image}
+className="
+w-full
+h-56
+object-cover
+"
+/>
+
+
+<p className="text-xs tracking-[0.3em] mt-4 text-gray-500">
+{news.category}
+&nbsp; • &nbsp;
+{news.date}
+</p>
+
+
+<h3 className="text-2xl font-serif mt-3">
+{news.title}
+</h3>
+
+
+</article>
+))
 }
 
-export default LatestNews
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+)
+
+}
+
+
+export default LatestNews;
