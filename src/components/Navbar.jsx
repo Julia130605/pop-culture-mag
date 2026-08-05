@@ -12,10 +12,10 @@ function Navbar() {
     setTimeout(() => {
 
       document
-      .getElementById(id)
-      ?.scrollIntoView({
-        behavior: "smooth",
-      });
+        .getElementById(id)
+        ?.scrollIntoView({
+          behavior: "smooth",
+        });
 
     }, 100);
 
@@ -24,92 +24,103 @@ function Navbar() {
 
   return (
 
-    <>
+    <header className="border-b border-white/10 bg-black text-white">
 
-      <header
-      className="
-      fixed top-0 left-0 w-full
-      z-50
-      bg-black
-      text-white
-      border-b
-      border-white/10
-      ">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
 
-        <nav
-        className="
-        px-8 py-6
-        flex
-        justify-between
-        items-center
-        ">
 
+        {/* Logo */}
+
+        <div>
 
           <a
-          href="#"
-          className="
-          text-xl
-          tracking-[0.3em]
-          "
+            href="#home"
+            className="
+            text-xl
+            font-bold
+            tracking-[0.18em]
+            "
           >
+
             POP CULTURE MAG
+
           </a>
 
 
+          <p className="
+          mt-1
+          font-serif
+          text-[10px]
+          italic
+          text-gray-400
+          ">
 
-          <button
+            Curated with love by Julia
+
+          </p>
+
+        </div>
+
+
+
+        {/* MENU BUTTON */}
+
+        <button
 
           onClick={() => setOpen(true)}
 
           className="
-          tracking-[0.3em]
           text-sm
+          tracking-[0.3em]
           "
-          >
 
-            MENU
+        >
 
-          </button>
+          MENU
 
-
-        </nav>
+        </button>
 
 
-      </header>
+      </nav>
 
 
 
-      {
-      open && (
+
+      {/* FULL SCREEN MENU */}
+
+      {open && (
 
         <div
 
-        className="
-        fixed
-        inset-0
-        z-[100]
-        bg-black
-        text-white
-        flex
-        flex-col
-        justify-center
-        px-12
-        "
+          className="
+          fixed
+          inset-0
+          z-[100]
+          bg-black
+          text-white
+          flex
+          flex-col
+          justify-center
+          px-12
+          animate-fade-in
+          "
 
         >
 
 
+          {/* CLOSE */}
 
           <button
 
-          onClick={() => setOpen(false)}
+            onClick={() => setOpen(false)}
 
-          className="
-          absolute
-          top-8
-          right-8
-          tracking-[0.3em]
-          "
+            className="
+            absolute
+            top-8
+            right-8
+            text-sm
+            tracking-[0.3em]
+            "
 
           >
 
@@ -119,122 +130,124 @@ function Navbar() {
 
 
 
-          <div
-          className="
-          space-y-8
-          "
+          {/* MENU ITEMS */}
+
+          <button
+
+            onClick={() => handleNavigate("home")}
+
+            className="
+            block
+            text-5xl
+            font-serif
+            mb-8
+            transition-all
+            duration-500
+            hover:tracking-[0.15em]
+            "
+
           >
 
+            HOME
+
+          </button>
 
 
-            <button
 
-            onClick={()=>{
-              setOpen(false);
-              window.scrollTo({
-                top:0,
-                behavior:"smooth"
-              });
-            }}
+          <button
+
+            onClick={() => handleNavigate("latest")}
 
             className="
             block
             text-5xl
             font-serif
+            mb-8
+            transition-all
+            duration-500
+            hover:tracking-[0.15em]
             "
-            >
 
-              HOME
+          >
 
-            </button>
+            LATEST
+
+          </button>
 
 
 
-            <button
+          <button
 
-            onClick={()=>handleNavigate("latest")}
+            onClick={() => handleNavigate("artists")}
 
             className="
             block
             text-5xl
             font-serif
+            mb-8
+            transition-all
+            duration-500
+            hover:tracking-[0.15em]
             "
-            >
 
-              LATEST
+          >
 
-            </button>
+            ARTISTS
+
+          </button>
 
 
 
+          <button
 
-            <button
-
-            onClick={()=>handleNavigate("artists")}
+            onClick={() => handleNavigate("music")}
 
             className="
             block
             text-5xl
             font-serif
+            mb-8
+            transition-all
+            duration-500
+            hover:tracking-[0.15em]
             "
-            >
 
-              ARTISTS
+          >
 
-            </button>
+            MUSIC
 
-
-
+          </button>
 
 
-            <button
 
-            onClick={()=>handleNavigate("music")}
+          <button
+
+            onClick={() => handleNavigate("videos")}
 
             className="
             block
             text-5xl
             font-serif
+            transition-all
+            duration-500
+            hover:tracking-[0.15em]
             "
-            >
 
-              MUSIC
+          >
 
-            </button>
+            VIDEOS
 
+          </button>
 
-
-
-
-            <button
-
-            onClick={()=>handleNavigate("videos")}
-
-            className="
-            block
-            text-5xl
-            font-serif
-            "
-            >
-
-              VIDEOS
-
-            </button>
-
-
-
-          </div>
 
 
         </div>
 
-
-      )
-      }
+      )}
 
 
 
-    </>
+    </header>
 
   );
 
