@@ -1,37 +1,40 @@
-import Footer from './components/Footer'
-import VideoMoments from './components/VideoMoments'
-import ArtistSpotlight from './components/ArtistSpotlight'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import SocialFollow from "./components/SocialFollow";
+import SocialFollow from './components/SocialFollow'
 import LatestNews from './components/LatestNews'
+import ArtistSpotlight from './components/ArtistSpotlight'
 import MusicPicks from './components/MusicPicks'
+import VideoMoments from './components/VideoMoments'
+
+
 function App() {
-  return (
-    <div className="min-h-screen bg-black text-white">
 
-      <Navbar />
+return (
 
-     <main>
+<div className="min-h-screen bg-black text-white">
 
-  <Hero />
+<Navbar />
 
-  <SocialFollow />
+<main>
 
-  <LatestNews />
+<Hero />
 
-  <ArtistSpotlight />
+<SocialFollow />
 
-  <MusicPicks />
+<LatestNews />
+
+<ArtistSpotlight />
+
+<MusicPicks />
+
+<VideoMoments />
 
 </main>
-    
 
-      <Footer />
-    </div>
-  )
+</div>
+
+)
+
 }
-
-
 
 export default App
