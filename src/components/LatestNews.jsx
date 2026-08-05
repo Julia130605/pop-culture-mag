@@ -5,145 +5,202 @@ import news3 from "../assets/news3.jpg";
 
 function LatestNews() {
 
-const newsItems = [
-{
-title:"Taylor Swift Enters A New Era",
-category:"LIVE",
-date:"JUL 2026",
-image:news1
-},
-{
-title:"Ariana Grande Returns To The Spotlight",
-category:"NEWS",
-date:"JUL 2026",
-image:news2
-},
-{
-title:"Olivia Rodrigo Defines A Generation",
-category:"ARTIST",
-date:"JUL 2026",
-image:news3
-}
-]
+
+  const newsItems = [
+
+    {
+      title:
+        "Ariana Grande Unveils petal, A Delicate Return to Her Most Personal Sound",
+      category: "MUSIC",
+      date: "AUG 2026",
+      image: news1,
+    },
 
 
-return (
-
-<section 
-id="latest"
-className="bg-[#f5f3ee] text-black py-24 px-6"
->
-
-
-<div className="max-w-7xl mx-auto">
+    {
+      title:
+        "Tate McRae Reveals The Visual World Behind Her Latest Pop Chapter",
+      category: "ARTIST",
+      date: "AUG 2026",
+      image: news2,
+    },
 
 
-<div className="mb-14">
+    {
+      title:
+        "Olivia Rodrigo Brings Her Latest Songs To Life Under The Spotlight",
+      category: "LIVE",
+      date: "AUG 2026",
+      image: news3,
+    },
 
-<p className="text-xs tracking-[0.4em] text-gray-500">
-LATEST STORIES
-</p>
-
-
-<h2 className="text-5xl md:text-7xl font-serif mt-4">
-What's happening now
-</h2>
-
-</div>
+  ];
 
 
 
-<div className="grid md:grid-cols-3 gap-8">
+  return (
+
+    <section
+      id="latest"
+      className="
+      bg-[#f5f3ee]
+      text-black
+      py-24
+      px-6
+      "
+    >
 
 
-{/* 大新闻 */}
-
-<article className="md:col-span-2 group">
-
-<div className="overflow-hidden">
-
-<img
-src={newsItems[0].image}
-className="
-w-full
-h-[520px]
-object-cover
-group-hover:scale-105
-transition
-duration-700
-"
-/>
-
-</div>
+      <div className="
+      max-w-7xl
+      mx-auto
+      ">
 
 
-<p className="text-xs tracking-[0.3em] mt-6 text-gray-500">
-{newsItems[0].category}
-&nbsp; • &nbsp;
-{newsItems[0].date}
-</p>
+
+        {/* 标题区域 */}
+
+        <div className="mb-14">
 
 
-<h3 className="text-4xl font-serif mt-4">
-{newsItems[0].title}
-</h3>
+          <p
+          className="
+          text-xs
+          tracking-[0.4em]
+          text-gray-500
+          "
+          >
+            LATEST STORIES
+          </p>
 
 
-</article>
 
+          <h2
+          className="
+          text-5xl
+          md:text-7xl
+          font-serif
+          mt-5
+          "
+          >
+            What's happening now
+          </h2>
+
+
+        </div>
 
 
 
 
-{/* 两个小新闻 */}
+        {/* 三张新闻卡片 */}
 
-<div className="space-y-10">
-
-
-{
-newsItems.slice(1).map((news)=>(
-<article key={news.title}>
-
-
-<img
-src={news.image}
-className="
-w-full
-h-56
-object-cover
-"
-/>
+        <div
+        className="
+        grid
+        md:grid-cols-3
+        gap-8
+        "
+        >
 
 
-<p className="text-xs tracking-[0.3em] mt-4 text-gray-500">
-{news.category}
-&nbsp; • &nbsp;
-{news.date}
-</p>
+          {
+          newsItems.map((news)=>(
+            
+
+            <article
+            key={news.title}
+            className="
+            group
+            "
+            >
 
 
-<h3 className="text-2xl font-serif mt-3">
-{news.title}
-</h3>
+
+              <div
+              className="
+              overflow-hidden
+              "
+              >
 
 
-</article>
-))
-}
+                <img
+
+                src={news.image}
+
+                alt={news.title}
+
+                className="
+                w-full
+                h-[420px]
+                object-cover
+                group-hover:scale-105
+                transition
+                duration-700
+                "
+
+                />
 
 
-</div>
+              </div>
 
 
-</div>
 
 
-</div>
+              <p
+              className="
+              text-xs
+              tracking-[0.3em]
+              text-gray-500
+              mt-6
+              "
+              >
+
+                {news.category}
+
+                &nbsp; • &nbsp;
+
+                {news.date}
+
+              </p>
 
 
-</section>
 
-)
+
+              <h3
+
+              className="
+              text-2xl
+              md:text-3xl
+              font-serif
+              leading-tight
+              mt-4
+              "
+
+              >
+
+                {news.title}
+
+              </h3>
+
+
+
+
+            </article>
+
+
+          ))
+          }
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+  );
 
 }
 
