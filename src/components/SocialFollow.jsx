@@ -10,7 +10,7 @@ function SocialFollow() {
 
 
         <h2 className="text-3xl md:text-5xl font-serif mb-6">
-          Follow Julia on Xiaohongshu
+          Follow Julia on Redbook
         </h2>
 
 
