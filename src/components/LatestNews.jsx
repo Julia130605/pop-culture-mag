@@ -1,26 +1,27 @@
 import news1 from "../assets/news1.jpg";
 import news2 from "../assets/news2.jpg";
 import news3 from "../assets/news3.jpg";
+
 const newsItems = [
-{
- title:"Ariana Grande's New Era",
- category:"ARTISTS",
- date:"AUGUST 04, 2026",
- image: news1
-},
-{
- title:"Dua Lipa Brings Disco Energy Back",
- category:"MUSIC",
- date:"AUGUST 02, 2026",
- image: news2
-},
-{
- title:"Olivia Rodrigo's Latest Stage Moment",
- category:"LIVE",
- date:"JULY 30, 2026",
- image: news3
-}
-]
+  {
+    title: "Ariana Grande Unveils petal, A Delicate Return to Her Most Personal Sound",
+    category: "ARTISTS",
+    date: "AUGUST 04, 2026",
+    image: news1
+  },
+  {
+    title: "Tate McRae Reveals the Visual World Behind Her New Pop Era",
+    category: "MUSIC",
+    date: "AUGUST 02, 2026",
+    image: news2
+  },
+  {
+    title: "Olivia Rodrigo Brings Her New Era to Life Under the Spotlight",
+    category: "LIVE",
+    date: "JULY 30, 2026",
+    image: news3
+  }
+];
 
 function LatestNews() {
   return (
