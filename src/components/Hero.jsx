@@ -1,7 +1,10 @@
 import heroImage from "../assets/hero.jpg";
 function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-90px)] overflow-hidden bg-black">
+    <section
+  id="home"
+  className="relative min-h-[calc(100vh-90px)]"
+>
     <img
   src={heroImage}
   alt="Pop music live performance"

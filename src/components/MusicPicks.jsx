@@ -24,7 +24,10 @@ const musicPicks = [
 
 function MusicPicks() {
   return (
-    <section className="bg-[#f2f0eb] px-6 py-20 text-black md:px-10 md:py-28">
+    <section
+  id="music"
+  className="bg-[#f2f0eb] text-black py-20"
+>
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 border-b border-black/25 pb-5">
           <p className="mb-2 text-xs tracking-[0.25em] text-black/50">

@@ -24,7 +24,10 @@ const videos = [
 
 function VideoMoments() {
   return (
-    <section className="bg-black px-6 py-20 text-white md:px-10 md:py-28">
+    <section
+  id="videos"
+  className="bg-black text-white py-20"
+>
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 flex items-end justify-between border-b border-white/20 pb-5">
           <div>
