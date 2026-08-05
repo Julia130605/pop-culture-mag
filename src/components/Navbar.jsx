@@ -3,52 +3,85 @@ import { useState } from "react";
 
 function Navbar() {
 
+
   const [open, setOpen] = useState(false);
 
+  const [activeItem, setActiveItem] = useState(null);
 
-  const handleNavigate = (id) => {
-
-    setOpen(false);
-
-    setTimeout(() => {
-
-      document
-        .getElementById(id)
-        ?.scrollIntoView({
-          behavior: "smooth",
-        });
-
-    },100);
-
-  };
 
 
   const menuItems = [
+
     {
       name:"HOME",
       id:"home",
     },
+
     {
       name:"LATEST",
       id:"latest",
     },
+
     {
       name:"ARTISTS",
       id:"artists",
     },
+
     {
       name:"MUSIC",
       id:"music",
     },
+
     {
       name:"VIDEOS",
       id:"videos",
     },
+
   ];
 
 
 
-  return (
+
+
+  const handleNavigate = (id,index)=>{
+
+
+    // 触发当前菜单动画
+
+    setActiveItem(index);
+
+
+
+    // 等动画结束再跳转
+
+    setTimeout(()=>{
+
+
+      setOpen(false);
+
+
+
+      document
+      .getElementById(id)
+      ?.scrollIntoView({
+
+        behavior:"smooth",
+
+      });
+
+
+    },500);
+
+
+  };
+
+
+
+
+
+return (
+
+
 
 <header
 className="
@@ -60,7 +93,9 @@ text-white
 >
 
 
+
 <nav
+
 className="
 mx-auto
 flex
@@ -70,26 +105,34 @@ justify-between
 px-8
 py-6
 "
+
 >
 
 
-{/* LOGO */}
 
 <div>
 
+
 <a
+
 href="#"
+
 className="
 text-xl
 font-bold
 tracking-[0.18em]
 "
+
 >
+
 POP CULTURE MAG
+
 </a>
 
 
+
 <p
+
 className="
 mt-1
 font-serif
@@ -97,8 +140,11 @@ text-[10px]
 italic
 text-gray-400
 "
+
 >
+
 Curated with love by Julia
+
 </p>
 
 
@@ -106,7 +152,7 @@ Curated with love by Julia
 
 
 
-{/* MENU BUTTON */}
+
 
 <button
 
@@ -127,17 +173,19 @@ MENU
 
 
 
+
 </nav>
 
 
 
 
 
-{/* FULL SCREEN MENU */}
 
 
 {
 open && (
+
+
 
 <div
 
@@ -157,7 +205,6 @@ animate-menu
 >
 
 
-{/* CLOSE */}
 
 <button
 
@@ -181,58 +228,114 @@ CLOSE
 
 
 
-{/* ITEMS */}
-
 
 <div
+
 className="
 space-y-8
 "
+
 >
 
 
+
 {
+
 menuItems.map((item,index)=>(
+
 
 
 <button
 
+
 key={item.id}
 
-onClick={()=>handleNavigate(item.id)}
+
+
+onClick={()=>handleNavigate(item.id,index)}
+
+
+
 
 style={{
+
 animationDelay:`${index*0.1}s`
+
 }}
 
-className="
+
+
+
+className={
+
+`
+
 block
+
 font-serif
+
 text-5xl
+
 tracking-wide
+
 opacity-0
+
 animate-item
-hover:opacity-60
-transition
-"
 
->
+transition-all
 
-{item.name}
-
-</button>
+duration-500
 
 
-))
+
+${
+activeItem===index
+
+?
+
+"scale-125 -translate-y-3 opacity-50"
+
+:
+
+""
 
 }
 
 
-</div>
+
+`
+
+}
+
+
+
+>
+
+
+
+{item.name}
+
+
+
+</button>
+
+
+
+))
+
+
+}
 
 
 
 </div>
+
+
+
+
+
+</div>
+
 
 
 )
@@ -240,12 +343,15 @@ transition
 }
 
 
+
 </header>
 
 
-  );
+);
+
 
 }
+
 
 
 export default Navbar;
