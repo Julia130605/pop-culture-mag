@@ -51,14 +51,16 @@ function LatestNews() {
     >
 
 
-      <div className="
+      <div
+      className="
       max-w-7xl
       mx-auto
-      ">
+      "
+      >
 
 
 
-        {/* 标题区域 */}
+        {/* 标题 */}
 
         <div className="mb-14">
 
@@ -77,10 +79,11 @@ function LatestNews() {
 
           <h2
           className="
-          text-5xl
-          md:text-7xl
+          text-4xl
+          md:text-6xl
           font-serif
           mt-5
+          tracking-tight
           "
           >
             What's happening now
@@ -92,7 +95,8 @@ function LatestNews() {
 
 
 
-        {/* 三张新闻卡片 */}
+
+        {/* 三张卡片 */}
 
         <div
         className="
@@ -103,18 +107,18 @@ function LatestNews() {
         >
 
 
-          {
+        {
           newsItems.map((news)=>(
-            
+
 
             <article
             key={news.title}
-            className="
-            group
-            "
+            className="group"
             >
 
 
+
+              {/* 图片 */}
 
               <div
               className="
@@ -131,7 +135,7 @@ function LatestNews() {
 
                 className="
                 w-full
-                h-[420px]
+                aspect-[4/5]
                 object-cover
                 group-hover:scale-105
                 transition
@@ -146,10 +150,13 @@ function LatestNews() {
 
 
 
+
+              {/* 分类 */}
+
               <p
               className="
-              text-xs
-              tracking-[0.3em]
+              text-[11px]
+              tracking-[0.35em]
               text-gray-500
               mt-6
               "
@@ -166,16 +173,18 @@ function LatestNews() {
 
 
 
-              <h3
 
+
+              {/* 标题 */}
+
+              <h3
               className="
-              text-2xl
-              md:text-3xl
+              text-xl
+              md:text-2xl
               font-serif
-              leading-tight
+              leading-relaxed
               mt-4
               "
-
               >
 
                 {news.title}
@@ -189,7 +198,7 @@ function LatestNews() {
 
 
           ))
-          }
+        }
 
 
         </div>
