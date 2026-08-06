@@ -14,7 +14,7 @@ function Navbar() {
 
     {
       name: "HOME",
-      id: "home",
+      path: "/",
     },
 
     {
@@ -75,20 +75,33 @@ function Navbar() {
   const handleClick = (item, index) => {
 
 
+
+    setActiveItem(index);
+
+
+
     // 页面跳转
 
     if(item.path){
 
-      window.location.href = item.path;
+
+      setTimeout(()=>{
+
+        window.location.href = item.path;
+
+      },500);
+
 
       return;
 
     }
 
 
-    // 首页滚动
+
+    // 首页区域滚动
 
     handleNavigate(item.id,index);
+
 
 
   };
@@ -97,7 +110,9 @@ function Navbar() {
 
 
 
+
   return (
+
 
 
 <header
@@ -126,6 +141,7 @@ py-6
 "
 
 >
+
 
 
 {/* Logo */}
@@ -168,13 +184,15 @@ Curated with love by Julia
 </p>
 
 
+
 </div>
 
 
 
 
 
-{/* MENU */}
+{/* MENU BUTTON */}
+
 
 <button
 
@@ -195,6 +213,7 @@ MENU
 
 
 
+
 </nav>
 
 
@@ -204,7 +223,12 @@ MENU
 
 
 
+{/* MENU PANEL */}
+
+
+
 {
+
 open && (
 
 
@@ -224,6 +248,7 @@ animate-menu
 "
 
 >
+
 
 
 
@@ -323,7 +348,6 @@ activeItem===index
 }
 
 
-
 `
 
 }
@@ -353,7 +377,6 @@ activeItem===index
 
 
 
-
 </div>
 
 
@@ -364,6 +387,7 @@ activeItem===index
 
 
 </header>
+
 
 
   );
