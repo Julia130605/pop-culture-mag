@@ -1,43 +1,110 @@
-import EditorNote from './components/EditorNote'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import SocialFollow from './components/SocialFollow'
-import LatestNews from './components/LatestNews'
-import ArtistSpotlight from './components/ArtistSpotlight'
-import MusicPicks from './components/MusicPicks'
-import VideoMoments from './components/VideoMoments'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
-function App() {
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+import Hero from "./components/Hero";
+import EditorNote from "./components/EditorNote";
+import LatestNews from "./components/LatestNews";
+import ArtistSpotlight from "./components/ArtistSpotlight";
+import MusicPicks from "./components/MusicPicks";
+import VideoMoments from "./components/VideoMoments";
+
+import ArtistPage from "./components/ArtistPage";
+
+
+
+function Home(){
+
 
 return (
 
-<div className="min-h-screen bg-black text-white">
-
-<Navbar />
-
-<main>
+<>
 
 <Hero />
 
+
 <EditorNote />
 
-<SocialFollow />
 
 <LatestNews />
 
+
 <ArtistSpotlight />
+
 
 <MusicPicks />
 
+
 <VideoMoments />
 
-</main>
 
-</div>
+<Footer />
+
+
+</>
+
 
 )
 
 }
 
-export default App
+
+
+
+
+function App(){
+
+
+return (
+
+<BrowserRouter>
+
+
+<Navbar />
+
+
+<Routes>
+
+
+
+{/* 首页 */}
+
+<Route
+
+path="/"
+
+element={<Home />}
+
+/>
+
+
+
+
+{/* Artist 页面 */}
+
+<Route
+
+path="/artists"
+
+element={<ArtistPage />}
+
+/>
+
+
+
+</Routes>
+
+
+
+</BrowserRouter>
+
+
+)
+
+}
+
+
+
+export default App;

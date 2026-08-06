@@ -13,28 +13,28 @@ function Navbar() {
   const menuItems = [
 
     {
-      name:"HOME",
-      id:"home",
+      name: "HOME",
+      id: "home",
     },
 
     {
-      name:"LATEST",
-      id:"latest",
+      name: "LATEST",
+      id: "latest",
     },
 
     {
-      name:"ARTISTS",
-      id:"artists",
+      name: "ARTISTS",
+      path: "/artists",
     },
 
     {
-      name:"MUSIC",
-      id:"music",
+      name: "MUSIC",
+      id: "music",
     },
 
     {
-      name:"VIDEOS",
-      id:"videos",
+      name: "VIDEOS",
+      id: "videos",
     },
 
   ];
@@ -42,35 +42,28 @@ function Navbar() {
 
 
 
+  const handleNavigate = (id, index) => {
 
-  const handleNavigate = (id,index)=>{
-
-
-    // 触发当前菜单动画
 
     setActiveItem(index);
 
 
-
-    // 等动画结束再跳转
-
-    setTimeout(()=>{
+    setTimeout(() => {
 
 
       setOpen(false);
 
 
-
       document
-      .getElementById(id)
-      ?.scrollIntoView({
+        .getElementById(id)
+        ?.scrollIntoView({
 
-        behavior:"smooth",
+          behavior: "smooth",
 
-      });
+        });
 
 
-    },500);
+    }, 500);
 
 
   };
@@ -79,17 +72,43 @@ function Navbar() {
 
 
 
-return (
+  const handleClick = (item, index) => {
 
+
+    // 页面跳转
+
+    if(item.path){
+
+      window.location.href = item.path;
+
+      return;
+
+    }
+
+
+    // 首页滚动
+
+    handleNavigate(item.id,index);
+
+
+  };
+
+
+
+
+
+  return (
 
 
 <header
+
 className="
 border-b
 border-white/15
 bg-black
 text-white
 "
+
 >
 
 
@@ -109,13 +128,14 @@ py-6
 >
 
 
+{/* Logo */}
 
 <div>
 
 
 <a
 
-href="#"
+href="/"
 
 className="
 text-xl
@@ -154,13 +174,15 @@ Curated with love by Julia
 
 
 
+{/* MENU */}
+
 <button
 
 onClick={()=>setOpen(true)}
 
 className="
-tracking-[0.3em]
 text-sm
+tracking-[0.3em]
 hover:opacity-70
 transition
 "
@@ -173,8 +195,8 @@ MENU
 
 
 
-
 </nav>
+
 
 
 
@@ -184,7 +206,6 @@ MENU
 
 {
 open && (
-
 
 
 <div
@@ -206,6 +227,8 @@ animate-menu
 
 
 
+{/* CLOSE */}
+
 <button
 
 onClick={()=>setOpen(false)}
@@ -214,8 +237,8 @@ className="
 absolute
 top-8
 right-8
-tracking-[0.3em]
 text-sm
+tracking-[0.3em]
 "
 
 >
@@ -223,6 +246,7 @@ text-sm
 CLOSE
 
 </button>
+
 
 
 
@@ -238,21 +262,19 @@ space-y-8
 >
 
 
-
 {
 
 menuItems.map((item,index)=>(
 
 
-
 <button
 
 
-key={item.id}
+key={item.name}
 
 
 
-onClick={()=>handleNavigate(item.id,index)}
+onClick={()=>handleClick(item,index)}
 
 
 
@@ -262,7 +284,6 @@ style={{
 animationDelay:`${index*0.1}s`
 
 }}
-
 
 
 
@@ -312,7 +333,6 @@ activeItem===index
 >
 
 
-
 {item.name}
 
 
@@ -337,7 +357,6 @@ activeItem===index
 </div>
 
 
-
 )
 
 }
@@ -347,8 +366,7 @@ activeItem===index
 </header>
 
 
-);
-
+  );
 
 }
 
