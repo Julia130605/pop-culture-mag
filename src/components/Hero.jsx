@@ -131,15 +131,11 @@ md:text-8xl
 
 >
 
-THE NEW
-
+ THE NEW
 <br/>
-
 ERA
-
 <br/>
-
-POP
+OF POP
 
 
 </h1>
