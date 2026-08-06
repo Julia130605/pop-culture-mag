@@ -1,44 +1,234 @@
 import heroImage from "../assets/hero.jpg";
+
+
 function Hero() {
+
+
   return (
-    <section
-  id="home"
-  className="relative min-h-[calc(100vh-90px)]"
+
+
+<section
+
+id="home"
+
+className="
+relative
+min-h-[calc(100vh-90px)]
+overflow-hidden
+"
+
+
 >
-    <img
-  src={heroImage}
-  alt="Pop music live performance"
-  className="absolute inset-0 h-full w-full object-cover object-[70%_center] md:object-center"
+
+
+{/* Background Image */}
+
+
+<img
+
+src={heroImage}
+
+alt="Pop culture live performance"
+
+className="
+absolute
+inset-0
+h-full
+w-full
+object-cover
+"
+
 />
 
-<div className="absolute inset-0 bg-black/55" />
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-90px)] max-w-7xl items-end px-6 pb-16 md:px-10 md:pb-24">
-        <div className="max-w-4xl">
-          <p className="mb-4 text-xs tracking-[0.3em] text-white/70">
-            MUSIC · ARTISTS · CULTURE
-          </p>
 
-          <h1 className="text-5xl font-bold leading-[0.9] tracking-tight sm:text-6xl md:text-8xl lg:text-9xl">
-            THE NEW ERA
-            <br />
-            OF POP
-          </h1>
 
-          <p className="mt-6 max-w-md text-sm text-white/70 md:text-base">
-            Explore music, artists and culture.
-          </p>
 
-          <a
-            href="#latest"
-            className="mt-8 inline-block border border-white px-6 py-3 text-xs tracking-[0.2em] transition duration-300 hover:bg-white hover:text-black"
-          >
-            EXPLORE NOW
-          </a>
-        </div>
-      </div>
-    </section>
-  )
+{/* Dark Overlay */}
+
+
+<div
+
+className="
+absolute
+inset-0
+bg-black/70
+"
+
+/>
+
+
+
+
+
+
+{/* Content */}
+
+
+
+<div
+
+className="
+relative
+z-10
+mx-auto
+flex
+min-h-[calc(100vh-90px)]
+max-w-7xl
+items-center
+px-8
+
+"
+
+>
+
+
+
+<div
+
+className="
+max-w-4xl
+"
+
+>
+
+
+
+
+<p
+
+className="
+mb-6
+text-xs
+tracking-[0.45em]
+text-white/70
+"
+
+>
+
+MUSIC · ARTISTS · CULTURE
+
+</p>
+
+
+
+
+
+
+
+<h1
+
+className="
+font-serif
+text-6xl
+leading-[0.9]
+tracking-tight
+text-white
+
+md:text-8xl
+
+"
+
+>
+
+THE NEW
+
+<br/>
+
+ERA
+
+<br/>
+
+POP
+
+
+</h1>
+
+
+
+
+
+
+
+<p
+
+className="
+mt-10
+max-w-xl
+text-lg
+tracking-wide
+text-white/80
+
+"
+
+>
+
+Explore music, artists and culture.
+
+</p>
+
+
+
+
+
+
+
+<button
+
+
+className="
+mt-12
+
+border
+border-white/70
+
+px-10
+py-4
+
+text-sm
+tracking-[0.35em]
+
+text-white
+
+transition
+duration-500
+
+hover:bg-white
+hover:text-black
+
+"
+
+>
+
+
+EXPLORE
+
+
+</button>
+
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+  );
+
+
 }
 
-export default Hero
+
+export default Hero;
