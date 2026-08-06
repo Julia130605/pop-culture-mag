@@ -1,17 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
 import Hero from "./components/Hero";
+
 import EditorNote from "./components/EditorNote";
+
+import SocialFollow from "./components/SocialFollow";
+
 import LatestNews from "./components/LatestNews";
-import ArtistSpotlight from "./components/ArtistSpotlight";
+
 import MusicPicks from "./components/MusicPicks";
+
+import ArtistSpotlight from "./components/ArtistSpotlight";
+
 import VideoMoments from "./components/VideoMoments";
 
-import ArtistPage from "./components/ArtistPage";
+import Footer from "./components/Footer";
 
 
 
@@ -22,19 +25,23 @@ return (
 
 <>
 
+
 <Hero />
 
 
 <EditorNote />
 
 
+<SocialFollow />
+
+
 <LatestNews />
 
 
-<ArtistSpotlight />
-
-
 <MusicPicks />
+
+
+<ArtistSpotlight />
 
 
 <VideoMoments />
@@ -45,8 +52,8 @@ return (
 
 </>
 
-
 )
+
 
 }
 
@@ -54,54 +61,24 @@ return (
 
 
 
-function App(){
+function App() {
 
 
 return (
 
-<BrowserRouter>
+<>
 
 
 <Navbar />
 
 
-<Routes>
+<Home />
 
 
+</>
 
-{/* 首页 */}
+);
 
-<Route
-
-path="/"
-
-element={<Home />}
-
-/>
-
-
-
-
-{/* Artist 页面 */}
-
-<Route
-
-path="/artists"
-
-element={<ArtistPage />}
-
-/>
-
-
-
-</Routes>
-
-
-
-</BrowserRouter>
-
-
-)
 
 }
 
